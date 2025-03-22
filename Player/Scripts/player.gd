@@ -4,8 +4,13 @@ extends Node3D
 @onready var craft: Spacecraft = get_node("Spacecraft")
 
 func _physics_process(delta: float) -> void:
+	ship_input(delta)
+
+func ship_input(delta: float) -> void:
 	if Input.is_action_pressed("forward"):
 		craft.throttle += delta * craft.stats.accel
+	if Input.is_action_pressed("backward"):
+		craft.throttle -= delta * craft.stats.accel
 	if Input.is_action_pressed("left"):
 		craft.rotate_object_local(Vector3.UP, craft.velocity.length() * delta)
 	if Input.is_action_pressed("right"):

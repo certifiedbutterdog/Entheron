@@ -33,3 +33,31 @@ horizontal_alignment = 1
 
 [node name="ShieldBar" type="ProgressBar" parent="Gauges"]
 layout_mode = 2
+
+[node name="Telemetry" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VelocityLabel" type="Label" parent="Telemetry"]
+layout_mode = 2
+text = "Velocity"
+horizontal_alignment = 1
+
+[node name="VelocityValue" type="Label" parent="Telemetry"]
+layout_mode = 2
+text = "0.0"
+horizontal_alignment = 1
+
+[node name="ThrottleLabel" type="Label" parent="Telemetry"]
+layout_mode = 2
+text = "Throttle"
+horizontal_alignment = 1
+
+[node name="ThrottleBar" type="ProgressBar" parent="Telemetry"]
+layout_mode = 2
