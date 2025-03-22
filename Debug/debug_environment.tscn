@@ -1,22 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://b46df33xcuxm"]
+[gd_scene load_steps=9 format=3 uid="uid://b46df33xcuxm"]
 
+[ext_resource type="Texture2D" uid="uid://ktqevettlvxf" path="res://Resources/Background/panorama1.jpg" id="1_i63ka"]
 [ext_resource type="PackedScene" uid="uid://ibdltdtsvh8d" path="res://Player/player.tscn" id="1_x8woy"]
 [ext_resource type="PackedScene" uid="uid://c5n1vmnvk7txq" path="res://Craft/spacecraft.tscn" id="2_fjqlf"]
 [ext_resource type="PackedScene" uid="uid://dafbh24uw35rl" path="res://UI/pilot_ui.tscn" id="3_x8woy"]
 [ext_resource type="PackedScene" uid="uid://d3uadnk7actc8" path="res://Objects/space_station.tscn" id="4_fjqlf"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fjqlf"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2prsg"]
+panorama = ExtResource("1_i63ka")
 
-[sub_resource type="Sky" id="Sky_i63ka"]
-sky_material = SubResource("ProceduralSkyMaterial_fjqlf")
+[sub_resource type="Sky" id="Sky_ss3rn"]
+sky_material = SubResource("PanoramaSkyMaterial_2prsg")
 
 [sub_resource type="Environment" id="Environment_2prsg"]
 background_mode = 2
-sky = SubResource("Sky_i63ka")
+background_energy_multiplier = 0.8
+sky = SubResource("Sky_ss3rn")
 tonemap_mode = 2
 glow_enabled = true
+glow_bloom = 0.2
+glow_blend_mode = 1
+adjustment_enabled = true
+adjustment_brightness = 1.05
+adjustment_contrast = 1.05
+adjustment_saturation = 1.3
 
 [node name="DebugEnvironment" type="Node3D"]
 
