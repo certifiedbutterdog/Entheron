@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Ship" load_steps=2 format=3 uid="uid://ckuim3pd85j4d"]
+
+[ext_resource type="Script" uid="uid://lh6jlnxtlaq3" path="res://Utils/ResourceScripts/ship.gd" id="1_i26xc"]
+
+[resource]
+script = ExtResource("1_i26xc")
+ship_class = "Cutlass"
+accel = 0.2
+decel = 0.5
+max_velocity = 10.0
+max_fuel = 50.0
+max_shields = 50.0
+economy = 0.05
+cargo = {}
+metadata/_custom_type_script = "uid://lh6jlnxtlaq3"

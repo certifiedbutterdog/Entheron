@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://dafbh24uw35rl"]
+
+[ext_resource type="Script" uid="uid://pmo41hmsm2vb" path="res://UI/Scripts/pilot_ui.gd" id="1_257y1"]
+
+[node name="PilotUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_257y1")
+
+[node name="Gauges" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 0.2
+anchor_bottom = 1.0
+
+[node name="FuelLabel" type="Label" parent="Gauges"]
+layout_mode = 2
+text = "Fuel"
+horizontal_alignment = 1
+
+[node name="FuelBar" type="ProgressBar" parent="Gauges"]
+layout_mode = 2
+
+[node name="ShieldLabel" type="Label" parent="Gauges"]
+layout_mode = 2
+text = "Shields"
+horizontal_alignment = 1
+
+[node name="ShieldBar" type="ProgressBar" parent="Gauges"]
+layout_mode = 2

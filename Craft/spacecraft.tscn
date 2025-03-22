@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5n1vmnvk7txq"]
+
+[ext_resource type="Script" uid="uid://dgfamqgaurotj" path="res://Craft/Scripts/spacecraft.gd" id="1_l8lyh"]
+[ext_resource type="Resource" uid="uid://ckuim3pd85j4d" path="res://Resources/Ships/cutlass.tres" id="2_o5a8k"]
+[ext_resource type="ArrayMesh" uid="uid://c3mcbiixxrhg0" path="res://Craft/Meshes/cutlass_mesh.tres" id="3_mrvdc"]
+[ext_resource type="Material" uid="uid://d36cyd1kwi1fy" path="res://Resources/Materials/cutlass_material.tres" id="4_hyg1i"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mrvdc"]
+points = PackedVector3Array(1.38476, 0.109086, -1.89398, -1.40031, -0.238826, -2.06809, -0.330712, 0.645358, 0.479511, 0.756855, -0.493573, -2.07641, 0.806164, -0.218294, 0.97488, -0.817107, 0.484887, -2.05454, -1.22611, 0.109086, -0.443653, 0.314904, 0.645358, 0.479511, -0.645734, -0.477989, 0.203514, -0.326537, 0.212909, 1.37235, 0.311074, -0.371833, 1.32053, 0.808304, 0.488391, -2.06949, -0.772346, -0.493332, -2.07568, 1.38476, -0.238826, -2.06809, 1.21055, 0.109086, -0.385495, 0.625906, -0.474469, 0.252784, 0.35948, 0.211419, 1.35326, -0.821924, -0.218276, 0.974799, -0.826326, 0.107373, 0.98184, -1.40031, 0.109086, -2.06809, -0.391315, -0.330876, 1.42659, 0.746578, 0.155516, 0.879521, -0.649567, 0.481278, 0.259979, 0.626367, 0.476656, 0.306527, -0.376444, -0.473087, 0.620748, 1.38476, -0.238826, -1.89398, 0.367913, -0.322736, 1.39186, -1.40031, -0.238826, -1.95214, 1.38476, 0.109086, -2.06809, -0.386254, 0.107134, 1.40345, 0.359642, -0.471587, 0.618176, -1.40031, 0.109086, -1.95214)
+
+[node name="Spacecraft" type="Area3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_l8lyh")
+stats = ExtResource("2_o5a8k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("3_mrvdc")
+surface_material_override/0 = ExtResource("4_hyg1i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_mrvdc")

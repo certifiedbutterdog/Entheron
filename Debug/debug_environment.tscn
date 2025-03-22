@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://b46df33xcuxm"]
+
+[ext_resource type="PackedScene" uid="uid://ibdltdtsvh8d" path="res://Player/player.tscn" id="1_x8woy"]
+[ext_resource type="PackedScene" uid="uid://c5n1vmnvk7txq" path="res://Craft/spacecraft.tscn" id="2_fjqlf"]
+[ext_resource type="PackedScene" uid="uid://dafbh24uw35rl" path="res://UI/pilot_ui.tscn" id="3_x8woy"]
+[ext_resource type="PackedScene" uid="uid://d3uadnk7actc8" path="res://Objects/space_station.tscn" id="4_fjqlf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fjqlf"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_i63ka"]
+sky_material = SubResource("ProceduralSkyMaterial_fjqlf")
+
+[sub_resource type="Environment" id="Environment_2prsg"]
+background_mode = 2
+sky = SubResource("Sky_i63ka")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="DebugEnvironment" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707104, 0.612376, -0.353553, -1.49013e-08, 0.499998, 0.866027, 0.70711, -0.612371, 0.353551, -100, 100, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2prsg")
+
+[node name="Player" parent="." instance=ExtResource("1_x8woy")]
+
+[node name="Spacecraft" parent="Player" instance=ExtResource("2_fjqlf")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Spacecraft"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.49691e-07, 1, -4)
+
+[node name="PilotUI" parent="Player" instance=ExtResource("3_x8woy")]
+
+[node name="SpaceStation" parent="." instance=ExtResource("4_fjqlf")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, -200)

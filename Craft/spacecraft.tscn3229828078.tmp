@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5n1vmnvk7txq"]
+
+[ext_resource type="Script" uid="uid://dgfamqgaurotj" path="res://Craft/Scripts/spacecraft.gd" id="1_l8lyh"]
+[ext_resource type="Resource" uid="uid://ckuim3pd85j4d" path="res://Resources/Ships/cutlass.tres" id="2_o5a8k"]
+
+[node name="Spacecraft" type="Node3D"]
+script = ExtResource("1_l8lyh")
+stats = ExtResource("2_o5a8k")
